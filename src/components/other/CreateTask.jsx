@@ -11,6 +11,8 @@ function CreateTask() {
 
   const authData = useContext(AuthContext);
 
+  const categories = ['Design', 'Development', 'Marketing', 'Testing', 'DevOps', 'Content', 'Analysis', 'Administration', 'Operations', 'IT', 'Support', 'Security', 'Meeting', 'Communication', 'Reporting', 'Optimization']
+
   const submitHandler = (e) => {
     e.preventDefault()
 
@@ -37,7 +39,7 @@ function CreateTask() {
     })
 
     if (!taskAssigned) {
-      alert('Employee not found! Please enter a valid employee name.')
+      alert('Employee not found! Please select a valid employee.')
       return
     }
 
@@ -109,30 +111,40 @@ function CreateTask() {
 
             <div>
               <h3 className='text-emerald-400 text-lg font-semibold mb-2'>Assign To</h3>
-              <input 
+              <select 
                 value={AssignState}
                 onChange={(e) => {
                   setAssignState(e.target.value)
                 }}
                 required
-                className='w-full bg-zinc-900 text-white border-2 border-zinc-700 rounded-lg px-4 py-3 outline-none focus:border-emerald-500 transition-colors placeholder:text-gray-500' 
-                type="text"  
-                placeholder='Employee name'
-              />   
+                className='w-full bg-zinc-900 text-white border-2 border-zinc-700 rounded-lg px-4 py-3 outline-none focus:border-emerald-500 transition-colors cursor-pointer'
+              >
+                <option value="" disabled>Select Employee</option>
+                {authData?.employees?.map((employee, index) => (
+                  <option key={index} value={employee.firstName}>
+                    {employee.firstName}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div>
               <h3 className='text-emerald-400 text-lg font-semibold mb-2'>Category</h3>
-              <input 
+              <select 
                 value={category}
                 onChange={(e) => {
                   setcategory(e.target.value)
                 }}
                 required
-                className='w-full bg-zinc-900 text-white border-2 border-zinc-700 rounded-lg px-4 py-3 outline-none focus:border-emerald-500 transition-colors placeholder:text-gray-500' 
-                type="text"  
-                placeholder='Design, Development, Marketing...'
-              />
+                className='w-full bg-zinc-900 text-white border-2 border-zinc-700 rounded-lg px-4 py-3 outline-none focus:border-emerald-500 transition-colors cursor-pointer'
+              >
+                <option value="" disabled>Select Category</option>
+                {categories.map((cat, index) => (
+                  <option key={index} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
             </div>
 
           </div>
