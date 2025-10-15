@@ -1,16 +1,35 @@
-# React + Vite
+# Employee Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Employee Management System with task tracking and assignment features.
 
-Currently, two official plugins are available:
+## Features
+- Admin dashboard for creating and assigning tasks
+- Employee dashboard for viewing and managing tasks
+- Task status tracking (New, Active, Completed, Failed)
+- Real-time task summary statistics
+- LocalStorage-based data persistence
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React
+- Tailwind CSS
+- Vite
+- Context API
 
-## React Compiler
+## Installation
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Default Credentials
 
-## Expanding the ESLint configuration
+**Admin:**
+- Email: admin@example.com
+- Password: 123
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Employees:**
+- Ali: ali.khan@example.com / 123
+- Sana: sana.rafique@example.com / 123
+- Zeshan: zeshan.hassan@example.com / 123
+- Aisha: aisha.ahmed@example.com / 123
+- Umer: umer.ali@example.com / 123
